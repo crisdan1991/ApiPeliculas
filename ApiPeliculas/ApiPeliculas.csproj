@@ -15,6 +15,23 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="XAct.Core.PCL" Version="0.0.5014" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\Proyectos\.net\ApiPeliculas\ApiPeliculas\Repository\IRepository\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Repository\IRepository\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\Proyectos\.net\ApiPeliculas\ApiPeliculas\Repository\IRepository\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\Proyectos\.net\ApiPeliculas\ApiPeliculas\Repository\IRepository\.editorconfig" />
   </ItemGroup>
 
 </Project>

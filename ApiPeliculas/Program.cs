@@ -17,9 +17,22 @@ builder.Services.AddSwaggerGen();
 
 // Add Repository
 builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+builder.Services.AddScoped<IPeliculaRepositorio, PeliculaRepositorio>();
+builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
 // Add AutoMapper
 builder.Services.AddAutoMapper(typeof(PeliculasMapper));
+
+//Soporte para CORS
+//Se puede habilitar: 1-Un dominio, 2-multiples dominios, 3-Todos los dominios
+//Se usa (*) para permitir todos los dominios
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PoliticaCors",
+        builder => {
+            builder.WithOrigins("http://localhost:4200").WithMethods().AllowAnyHeader();
+            }); 
+});
 
 var app = builder.Build();
 
@@ -31,6 +44,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+//Soporte para CORS
+
+app.UseCors("PoliticaCors");
 
 app.UseAuthorization();
 
